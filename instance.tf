@@ -1,3 +1,6 @@
+# REMEMBER: TO TEST YOU WILL NEED awscli INSTALLED
+# see packer file
+
 data "aws_ami" "ubuntu_xenial_lts" {
   most_recent = true
 
@@ -15,7 +18,8 @@ data "aws_ami" "ubuntu_xenial_lts" {
 }
 
 resource "aws_instance" "public-a" {
-  ami       = "${data.aws_ami.ubuntu_xenial_lts.id}"
+  #ami       = "${data.aws_ami.ubuntu_xenial_lts.id}"
+  ami       = "ami-0300bce4b47c6ffdc"
   subnet_id = "${aws_subnet.public-a.id}"
 
   vpc_security_group_ids = [
@@ -33,11 +37,11 @@ resource "aws_instance" "public-a" {
 }
 
 resource "aws_instance" "private-a" {
-  ami       = "${data.aws_ami.ubuntu_xenial_lts.id}"
+  #ami       = "${data.aws_ami.ubuntu_xenial_lts.id}"
+  ami       = "ami-0300bce4b47c6ffdc"
   subnet_id = "${aws_subnet.private-a.id}"
 
   vpc_security_group_ids = [
-    "${aws_security_group.private-endpoint-sg.id}",
     "${aws_security_group.private-access-sg.id}",
   ]
 
