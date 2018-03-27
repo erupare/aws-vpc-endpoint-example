@@ -22,6 +22,8 @@ The AMI you use has 'awscli' installed prior to launching the private instance s
 
 _A packer example is included and you'll need to adjust the `instance.tf` file to query the latest AMI you have built in EC2. Instructions on using packer is left to you._
 
+  `packer build -var 'aws_access_key=<aws_access_key>' -var 'aws_secret_key=<aws_secret_key>' ubuntu-16.04-aws.json`
+
 It is only going to set up subnets in AZs a, b, and c (this is example code..)
 
 It is only launching instances in AZ a (this is example code..)
