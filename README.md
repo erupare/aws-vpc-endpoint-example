@@ -13,8 +13,10 @@ This example code creates the following:
   - is not assigned to any route table
   - does not have access to the internet
   
-2 VPC endpoints are created for use
+1 VPC endpoints are created for use
 - com.amazoneaws.`region`.ec2
+
+1 VPC endpoint is stubbed but not tested yet
 - com.amazoneaws.`region`.s3
 
 ## assumptions
@@ -22,7 +24,7 @@ The AMI you use has 'awscli' installed prior to launching the private instance s
 
 _A packer example is included and you'll need to adjust the `instance.tf` file to query the latest AMI you have built in EC2. Instructions on using packer is left to you._
 
-  `packer build -var 'aws_access_key=<aws_access_key>' -var 'aws_secret_key=<aws_secret_key>' ubuntu-16.04-aws.json`
+  `packer build -var 'aws_access_key=<aws_access_key>' -var 'aws_secret_key=<aws_secret_key>' -var 'security_group_id=<security_group_id>' -var 'subnet_id=<subnet_id>' ubuntu-16.04-aws.json`
 
 It is only going to set up subnets in AZs a, b, and c (this is example code..)
 
