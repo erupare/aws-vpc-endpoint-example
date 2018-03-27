@@ -31,6 +31,18 @@ resource "aws_subnet" "public-c" {
   }
 }
 
+resource "aws_subnet" "packer-a" {
+  vpc_id                  = "${aws_vpc.the_vpc.id}"
+  cidr_block              = "${var.first-2-octets}.32.0/21"
+  availability_zone       = "${var.aws_region}a"
+  map_public_ip_on_launch = "true"
+
+  tags {
+    Name = "${var.tag_prefix}-packer-a"
+  }
+}
+
+
 resource "aws_subnet" "private-a" {
   vpc_id                  = "${aws_vpc.the_vpc.id}"
   cidr_block              = "${var.first-2-octets}.128.0/20"
