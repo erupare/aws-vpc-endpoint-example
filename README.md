@@ -14,8 +14,8 @@ This example code creates the following:
   - does not have access to the internet
   
 2 VPC endpoints are created for use
-- com.amazoneaws.<region>.ec2
-- com.amazoneaws.<region>.s3
+- com.amazoneaws.`region`.ec2
+- com.amazoneaws.`region`.s3
 
 ## assumptions
 The AMI you use has 'awscli' installed prior to launching the private instance so that you can test features. This is how you will test that things are working.
