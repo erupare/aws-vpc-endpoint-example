@@ -36,6 +36,8 @@ set `home-ip` to your remote IPv4 address you would like to use SSH from.
 
 set `tag_prefix` to something to create for the _Name_ AWS tag.
 
+set `ami_key` to your SSH key you will be using in AWS.
+
 ## use Terraform to build your example infrastructure
 ```
 export AWS_PROFILE=<your-configured-profile>
