@@ -27,6 +27,7 @@
     "ssh_username": "ubuntu",
     "ami_name": "packer-ubuntu-with-aws {{timestamp}}",
     "security_group_id": "{{user `security_group_id`}}",
+    "spot_price": "auto",
     "subnet_id": "{{user `subnet_id`}}"
   }],
 
