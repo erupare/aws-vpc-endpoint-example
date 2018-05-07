@@ -51,13 +51,13 @@ resource "aws_vpc_endpoint" "ec2" {
 # create vpc-endpoint for S3
 # this wasn't tested and it fails as it should until it is tested
 
-#resource "aws_vpc_endpoint" "s3" {
-#  vpc_id              = "${aws_vpc.the_vpc.id}"
-#  service_name        = "com.amazonaws.${var.aws_region}.s3"
+resource "aws_vpc_endpoint" "s3" {
+  vpc_id              = "${aws_vpc.the_vpc.id}"
+  service_name        = "com.amazonaws.${var.aws_region}.s3"
 #  private_dns_enabled = "true"
 #  vpc_endpoint_type   = "Gateway"
 #
 #  security_group_ids = [
 #    "${aws_security_group.private-endpoint-sg.id}",
 #  ]
-#}
+}
