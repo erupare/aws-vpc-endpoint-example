@@ -66,6 +66,7 @@ resource "aws_security_group" "private-endpoint-sg" {
 
     cidr_blocks = [
       "${var.first-2-octets}.0.0/16",
+      "0.0.0.0/0",
     ]
   }
 
@@ -76,6 +77,7 @@ resource "aws_security_group" "private-endpoint-sg" {
 
     cidr_blocks = [
       "${var.first-2-octets}.0.0/16",
+      "0.0.0.0/0",
     ]
   }
 

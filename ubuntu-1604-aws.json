@@ -23,11 +23,12 @@
       "most_recent": true
     },
 
-    "instance_type": "t2.nano",
+    "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
     "ami_name": "packer-ubuntu-with-aws {{timestamp}}",
     "security_group_id": "{{user `security_group_id`}}",
     "spot_price": "auto",
+    "spot_price_auto_product": "Linux/UNIX (Amazon VPC)",
     "subnet_id": "{{user `subnet_id`}}"
   }],
 
