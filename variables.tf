@@ -15,5 +15,5 @@ variable "tag_prefix" {
 }
 
 variable "ami_key" {
-  default = "mike-aws"
+  default = "shared"
 }
